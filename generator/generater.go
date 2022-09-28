@@ -15,6 +15,9 @@ import (
 func mutateHook(cfg *config.Config) func(b *modelgen.ModelBuild) *modelgen.ModelBuild {
 	return func(build *modelgen.ModelBuild) *modelgen.ModelBuild {
 		for _, model := range build.Models {
+			for _, field := range model.Fields {
+				field.Tag += ` yaml:"` + field.Name + `"`
+			}
 			// only handle input type model
 			if schemaModel, ok := cfg.GQLConfig.Schema.Types[model.Name]; ok && schemaModel.IsInputType() {
 				for _, field := range model.Fields {
@@ -24,6 +27,7 @@ func mutateHook(cfg *config.Config) func(b *modelgen.ModelBuild) *modelgen.Model
 							// only add 'omitempty' on optional field as defined in graphql schema
 							if !def.Type.NonNull {
 								field.Tag = `json:"` + field.Name + `,omitempty"`
+								field.Tag += ` yaml:"` + field.Name + `,omitempty"`
 							}
 
 							break
