@@ -10,8 +10,8 @@ import (
 	"strings"
 
 	"github.com/99designs/gqlgen/codegen/config"
-	"github.com/Yamashou/gqlgenc/client"
-	"github.com/Yamashou/gqlgenc/introspection"
+	"github.com/pluralsh/gqlgenc/client"
+	"github.com/pluralsh/gqlgenc/introspection"
 	"github.com/vektah/gqlparser/v2"
 	"github.com/vektah/gqlparser/v2/ast"
 	"github.com/vektah/gqlparser/v2/validator"

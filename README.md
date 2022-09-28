@@ -90,7 +90,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Yamashou/gqlgenc/clientgen"
+	"github.com/pluralsh/gqlgenc/clientgen"
 
 	"github.com/99designs/gqlgen/api"
 	"github.com/99designs/gqlgen/codegen/config"

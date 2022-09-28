@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/Yamashou/gqlgenc/clientv2"
+	"github.com/pluralsh/gqlgenc/clientv2"
 )
 
 type Client struct {
